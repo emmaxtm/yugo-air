@@ -1,0 +1,36 @@
+﻿@model WebApplication4.Models.Kandidat
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Obrazac</title>
+    @Styles.Render("~/Content/forma1.css")
+</head>
+<body>
+
+    <h1>Popunite obrazac i upisite se u klub!</h1>
+    @using (Html.BeginForm("Obrazac","Home",FormMethod.Post,new { @class = "forma1" }))
+    {
+        <fieldset>
+            <legend>Prijava:</legend>
+            <p>Ime:@Html.TextBoxFor(x=>x.Ime)</p>
+            <p>Prezime:@Html.TextBoxFor(x=>x.Prezime)</p>
+            <p>E-mail:@Html.TextBoxFor(x=>x.Email)</p>
+            <p>Telefon:@Html.TextBoxFor(x=>x.Telefon)</p>
+
+            <h3>Odaberite jedan od ponudjenih kurseva:</h3>
+            @Html.DropDownListFor(x => x.Kurs, new[]
+       {
+           new SelectListItem() {Text="Opsta avijacija",Value="avijacija"},
+           new SelectListItem() {Text="Jedrilicarstvo",Value="jedrilicarstvo"},
+           new SelectListItem() {Text="Balonarstvo",Value="balonarstvo"},
+           new SelectListItem() {Text="Padobranstvo",Value="padobranstvo"}
+       })
+            <input type="submit" value="Posalji prijavu" />
+        </fieldset>
+    }
+    <div> 
+    </div>
+</body>
+</html>

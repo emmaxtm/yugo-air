@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="description" content="@ViewBag.Description" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css"/>
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="index.html" class="logo">Yugo Air</a>
+            <nav id="nav">
+               <a>@Html.ActionLink("Pocetna", "Index")</a>
+               <a>@Html.ActionLink("O_nama", "O_nama")</a>
+            </nav>
+        </div>
+    </header>
+    <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+    <!-- Banner -->
+   @{
+       Html.RenderPartial("_banner");
+           }
+
+    <!-- One -->
+    @RenderBody()
+   
+
+    <!-- Footer -->
+  
+            
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

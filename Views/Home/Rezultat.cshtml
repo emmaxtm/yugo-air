@@ -1,0 +1,40 @@
+﻿@model WebApplication4.Models.Kandidat
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"
+    <title>dobrodosli</title>
+</head>
+<body>
+    @{ 
+        var por1 = "Hvala sto ste se prijavili na kurs opste avijacije. Vasa avantura tek pocinje!";
+        var por2 = "Hvala sto ste se prijavili na kurs jedrilicarstva. Vasa avantura tek pocinje!";
+        var por3 = "Hvala sto ste se prijavili na kurs balonarstva. Vasa avantura tek pocinje!";
+        var por4 = "Hvala sto ste se prijavili na kurs padobranstva. Vasa avantura tek pocinje!";
+    }
+    @Html.ActionLink("Izaberite vrstu vazduhoplova","Views/Obrazac2")
+    
+   @if (Model.Kurs == "avijacija")
+   {
+       <h4>@por1</h4>
+   }
+   else if (Model.Kurs == "jedrilicarstvo")
+   {
+       <h4>@por2</h4>
+   }
+   else if (Model.Kurs == "balonarstvo")
+   {
+       <h4>@por3</h4>
+   }
+   else if (Model.Kurs == "padobranstvo")
+   {
+       <h4>@por4</h4>
+   }
+</body>
+</html>
+
+
